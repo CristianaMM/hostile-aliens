@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&display=swap");
+
+$lightGrey: #f4f4f4;
+$darkGrey: #676e79;
+$black: #000000;
+
+$font-family: "Red Rose", cursive;
+
+/*media queries (sizes used by bootstrap) */
+$small: 576px;
+$medium: 768px;
+$large: 992px;
+$extra-large: 1200px;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: $font-family;
+  text-decoration: none;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
