@@ -3,12 +3,32 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .mother {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &__ship {
+    max-width: 150px;
+
+    @media screen and (min-width: $small) {
+      max-width: 180px;
+    }
+    @media screen and (min-width: $medium) {
+      max-width: 200px;
+    }
+    @media screen and (min-width: $large) {
+      max-width: 220px;
+    }
+    @media screen and (min-width: $extra-large) {
+      max-width: 250px;
+    }
+  }
 }
 
 .defence {
@@ -17,20 +37,69 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  margin: 20px;
+
+  &__container {
+    padding: 10px;
+  }
+
+  &__ship {
+    max-width: 80px;
+
+    @media screen and (min-width: $small) {
+      max-width: 110px;
+    }
+    @media screen and (min-width: $medium) {
+      max-width: 120px;
+    }
+    @media screen and (min-width: $large) {
+      max-width: 150px;
+    }
+    @media screen and (min-width: $extra-large) {
+      max-width: 170px;
+    }
+  }
 }
 
 .attack {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: left;
+  &__container1 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    margin-bottom: 20px;
+  }
+  &__container2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+  }
 
-  div {
-    width: 25%;
+  &__shipContainer {
+    width: 22.5%;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  &__ship {
+    max-width: 50px;
+
+    @media screen and (min-width: $small) {
+      max-width: 60px;
+    }
+    @media screen and (min-width: $medium) {
+      max-width: 70px;
+    }
+    @media screen and (min-width: $large) {
+      max-width: 85px;
+    }
+    @media screen and (min-width: $extra-large) {
+      max-width: 100px;
+    }
   }
 }
 
@@ -38,12 +107,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  bottom: 50px;
 
   &__ship {
-    width: 10%;
+    max-width: 80px;
+
+    @media screen and (min-width: $small) {
+      max-width: 110px;
+    }
+    @media screen and (min-width: $medium) {
+      max-width: 120px;
+    }
+    @media screen and (min-width: $large) {
+      max-width: 150px;
+    }
+    @media screen and (min-width: $extra-large) {
+      max-width: 170px;
+    }
   }
 }
