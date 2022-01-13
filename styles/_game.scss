@@ -10,7 +10,7 @@
 
 .mother {
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: center;
 
   &__ship {
@@ -41,6 +41,9 @@
 
   &__container {
     padding: 10px;
+    display: flex;
+    align-items: top;
+    justify-content: center;
   }
 
   &__ship {
@@ -81,7 +84,7 @@
   &__shipContainer {
     width: 22.5%;
     display: flex;
-    align-items: center;
+    align-items: top;
     justify-content: center;
   }
 
@@ -109,6 +112,7 @@
   justify-content: center;
 
   &__ship {
+    cursor: pointer;
     max-width: 80px;
 
     @media screen and (min-width: $small) {
@@ -124,4 +128,10 @@
       max-width: 170px;
     }
   }
+}
+
+.points {
+  color: $lightGrey;
+  font-weight: bold;
+  font-size: 20px;
 }
