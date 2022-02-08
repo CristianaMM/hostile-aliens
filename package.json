@@ -14,5 +14,11 @@
     "gulp-sass": "^5.1.0",
     "jest": "^27.4.7",
     "sass": "^1.47.0"
+  },
+  "dependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.16.8"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
   }
 }

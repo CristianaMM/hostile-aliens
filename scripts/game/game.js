@@ -1,4 +1,4 @@
-class Ship {
+export class Ship {
   constructor(id) {
     this.id = id;
     this.points = 0;
@@ -25,7 +25,7 @@ class Ship {
   }
 }
 
-class MotherShip extends Ship {
+export class MotherShip extends Ship {
   constructor(id) {
     super(id);
     this.points = 100;
@@ -33,7 +33,7 @@ class MotherShip extends Ship {
   }
 }
 
-class DefenceShip extends Ship {
+export class DefenceShip extends Ship {
   constructor(id) {
     super(id);
     this.points = 80;
@@ -41,7 +41,7 @@ class DefenceShip extends Ship {
   }
 }
 
-class AttackShip extends Ship {
+export class AttackShip extends Ship {
   constructor(id) {
     super(id);
     this.points = 45;
@@ -49,57 +49,61 @@ class AttackShip extends Ship {
   }
 }
 
-const fireButton = document.querySelector(".player");
-const restartButton = document.querySelector(".gameOverModal__button");
-const gameOverModal = document.querySelector(".gameOverModal");
-let ships = [];
+export class Game {
+  constructor() {
+    this.ships = [];
+    this.fireButton = document.querySelector(".player");
+    this.restartButton = document.querySelector(".gameOverModal__button");
+    this.gameOverModal = document.querySelector(".gameOverModal");
+  }
 
-function setUpGame() {
-  for (let i = 0; i < 14; i++) {
-    if (i === 0) {
-      ships.push(new MotherShip(`ship_${i}`));
-    } else if (i > 0 && i <= 5) {
-      ships.push(new DefenceShip(`ship_${i}`));
-    } else {
-      ships.push(new AttackShip(`ship_${i}`));
+  setUpGame() {
+    this.fireButton.addEventListener("click", () => this.fire());
+
+    this.restartButton.addEventListener("click", () => {
+      this.setUpGame();
+      this.gameOverModal.style.display = "none";
+    });
+
+    for (let i = 0; i < 14; i++) {
+      if (i === 0) {
+        this.ships.push(new MotherShip(`ship_${i}`));
+      } else if (i > 0 && i <= 5) {
+        this.ships.push(new DefenceShip(`ship_${i}`));
+      } else {
+        this.ships.push(new AttackShip(`ship_${i}`));
+      }
+    }
+
+    for (const ship of this.ships) {
+      ship.updatePoints();
+      ship.display();
     }
   }
 
-  for (const ship of ships) {
-    ship.updatePoints();
-    ship.display();
-  }
-}
+  gameOver() {
+    for (const ship of this.ships) {
+      ship.destroy();
+    }
 
-function gameOver() {
-  for (const ship of ships) {
-    ship.destroy();
-    ships = [];
+    this.ships = [];
+
+    this.gameOverModal.style.display = "flex";
   }
 
-  gameOverModal.style.display = "flex";
-}
+  fire() {
+    const index = Math.floor(Math.random() * this.ships.length);
+    const ship = this.ships[index];
 
-function fire() {
-  const index = Math.floor(Math.random() * ships.length);
-  const ship = ships[index];
+    ship.hit();
 
-  ship.hit();
+    if (ship.points <= 0) {
+      this.ships.splice(index, 1);
+      ship.destroy();
 
-  if (ship.points <= 0) {
-    ships.splice(index, 1);
-    ship.destroy();
-
-    if (index === 0) {
-      gameOver();
+      if (index === 0) {
+        this.gameOver();
+      }
     }
   }
 }
-
-fireButton.addEventListener("click", () => fire());
-restartButton.addEventListener("click", () => {
-  setUpGame();
-  gameOverModal.style.display = "none";
-});
-
-setUpGame();
