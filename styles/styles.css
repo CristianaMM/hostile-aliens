@@ -161,11 +161,11 @@ body {
   width: 40px;
 }
 .mother__ship {
-  max-width: 150px;
+  max-width: 100px;
 }
 @media screen and (min-width: 576px) {
   .mother__ship {
-    max-width: 100px;
+    max-width: 120px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -180,7 +180,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  margin: 20px;
+  margin: 20px 5px;
 }
 .defence__container {
   padding: 10px;
@@ -192,11 +192,16 @@ body {
   width: 40px;
 }
 .defence__ship {
-  max-width: 80px;
+  max-width: 60px;
 }
 @media screen and (min-width: 576px) {
   .defence__ship {
-    max-width: 110px;
+    max-width: 80px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .defence__ship {
+    max-width: 100px;
   }
 }
 
@@ -225,11 +230,16 @@ body {
   width: 40px;
 }
 .attack__ship {
-  max-width: 50px;
+  max-width: 40px;
 }
 @media screen and (min-width: 576px) {
   .attack__ship {
     max-width: 60px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .attack__ship {
+    max-width: 70px;
   }
 }
 

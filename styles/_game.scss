@@ -18,20 +18,14 @@
   }
 
   &__ship {
-    max-width: 150px;
+    max-width: 100px;
 
     @media screen and (min-width: $small) {
-      max-width: 100px;
+      max-width: 120px;
     }
     @media screen and (min-width: $medium) {
       max-width: 200px;
     }
-    // @media screen and (min-width: $large) {
-    //   max-width: 220px;
-    // }
-    // @media screen and (min-width: $extra-large) {
-    //   max-width: 220px;
-    // }
   }
 }
 
@@ -41,7 +35,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  margin: 20px;
+  margin: 20px 5px;
 
   &__container {
     padding: 10px;
@@ -55,14 +49,14 @@
   }
 
   &__ship {
-    max-width: 80px;
+    max-width: 60px;
 
     @media screen and (min-width: $small) {
-      max-width: 110px;
+      max-width: 80px;
     }
-    // @media screen and (min-width: $medium) {
-    //   max-width: 120px;
-    // }
+    @media screen and (min-width: $medium) {
+      max-width: 100px;
+    }
     // @media screen and (min-width: $large) {
     //   max-width: 150px;
     // }
@@ -101,20 +95,14 @@
   }
 
   &__ship {
-    max-width: 50px;
+    max-width: 40px;
 
     @media screen and (min-width: $small) {
       max-width: 60px;
     }
-    // @media screen and (min-width: $medium) {
-    //   max-width: 70px;
-    // }
-    // @media screen and (min-width: $large) {
-    //   max-width: 85px;
-    // }
-    // @media screen and (min-width: $extra-large) {
-    //   max-width: 100px;
-    // }
+    @media screen and (min-width: $medium) {
+      max-width: 70px;
+    }
   }
 }
 
@@ -130,15 +118,6 @@
     @media screen and (min-width: $small) {
       max-width: 110px;
     }
-    // @media screen and (min-width: $medium) {
-    //   max-width: 120px;
-    // }
-    // @media screen and (min-width: $large) {
-    //   max-width: 150px;
-    // }
-    // @media screen and (min-width: $extra-large) {
-    //   max-width: 170px;
-    // }
   }
 }
 
